@@ -1,0 +1,3 @@
+[submodule "frame"]
+	path = frame
+	url = https://wuhanchu@github.com/wuhanchu/flask_rest_frame.git
