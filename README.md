@@ -1,6 +1,4 @@
-
-
-# FLASK脚手架
+# FLASK_STARTER(后端开发脚手架)
 [项目地址](https://github.com/wuhanchu/flask_starter)
 基于flask的框架，并整合一些常用框架。
 基于一定的标准，快速创建web服务
@@ -8,7 +6,7 @@
  
 ## 目录
 
-- [FLASK脚手架](#flask脚手架)
+- [FLASK_STARTER(后端开发脚手架)](#flask_starter后端开发脚手架)
   - [目录](#目录)
   - [上手指南](#上手指南)
     - [开发前的配置要求](#开发前的配置要求)
