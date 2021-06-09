@@ -1,7 +1,7 @@
 
 
 # FLASK脚手架
-
+[项目地址](https://github.com/wuhanchu/flask_starter)
 基于flask的框架，并整合一些常用框架。
 基于一定的标准，快速创建web服务
 
