@@ -1,0 +1,13 @@
+*.pyc
+/.idea
+*.bak
+*.lic
+/log
+/logs
+service.sh
+/celerybeat.pid
+/celerybeat-schedule
+*.pytest_cache
+flask_frame
+had-update-db
+.vscode
