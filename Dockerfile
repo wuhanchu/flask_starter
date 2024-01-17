@@ -1,10 +1,7 @@
-FROM server.aiknown.cn:31003/z_ai_frame/python3:tensorflow_opencv
+FROM wuhanchu/python:3_alpine
 COPY "./" "./"
 
-
-RUN python3 --version
-RUN pip install --upgrade pip
-RUN pip3 install  -i https://mirrors.aliyun.com/pypi/simple/  -r ./requirements.txt
+RUN pip3 install  -r ./requirements.txt   -i https://mirrors.aliyun.com/pypi/simple/ --extra-index-url  https://pypi.org/simple/
 RUN ln -sf /usr/bin/python3 /usr/bin/python
 
 RUN chmod +x ./script/run.sh

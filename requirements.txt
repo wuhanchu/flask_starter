@@ -1,1 +1,10 @@
--r frame/requirements.txt
+flask_frame==0.5.4
+redis~=4.0.2
+
+
+itsdangerous~=2.0.1
+Authlib~=0.14.1
+
+celery~=5.2.1
+celery_once~=3.0.1
+celery-redbeat~=2.0.0
