@@ -1,13 +1,14 @@
 # encoding: utf-8
 from flask_frame.app import create_app
-import module
-from config import config
-import context
+from .config import config
+from . import context
 
 
 if context.app:
     app = context.app
 else:
+    from . import module
+    
     # 初始化
     app = create_app(config)
     module.init_app(app)
