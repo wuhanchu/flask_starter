@@ -1,0 +1,7 @@
+/.idea
+*.bak
+*.lic
+/log
+__pycache__
+.pytest_cache
+/docker

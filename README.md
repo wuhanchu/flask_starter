@@ -57,7 +57,7 @@ docker build -f ./docker/Dockerfile -t wuhanchu/flask_flask_starer:master .
 ## 部署/运行
 
 ```shell
-docker compose -f ./docker/docker-compose.yml -e ../run_config/env/flask_starter/test.env up -d
+docker compose  -p project -f ./docker/docker-compose.yml --env-file ../run_config/env/flask_starter/test.env up -d
 ```
 
 需要自定义环境变量文件
