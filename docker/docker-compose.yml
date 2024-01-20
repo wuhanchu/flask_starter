@@ -1,0 +1,41 @@
+version: "3"
+services:
+  flask_starer_redis:
+    container_name: flask_starer_redis
+    restart: always
+    image: docker.io/redis:6-buster
+    ports:
+        - ${FLASK_STARTER_REDIS_PORT}:6379
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    network_mode: bridge
+    volumes:
+      - /etc/localtime:/etc/localtime
+
+  postgres_flask_starer:
+    container_name: postgres_flask_starer
+    restart: always
+    image: docker.io/postgrest/postgrest:v9.0.0
+    ports:
+      - ${FLASK_STARTER_POSTGREST_PORT}:3000
+    environment:
+      PGRST_DB_URI: "postgres://postgres:${POSTGRES_PASSWORD}@172.17.0.1:${DB_PORT}/dataknown"
+      PGRST_DB_SCHEMA: "flask_starer"
+      PGRST_DB_ANON_ROLE: "postgres"
+    network_mode: bridge
+   
+
+  flask_starer:
+    container_name: flask_starer
+    restart: always
+    image: wuhanchu/flask_flask_starer:${FLASK_STARTER_SERVER_VERSION}
+    ports:
+      - ${FLASK_STARTER_SERVER_PORT}:5000
+    environment:
+      REDIS_URL: "redis://:${REDIS_PASSWORD}@172.17.0.1:${FLASK_STARTER_REDIS_PORT}"
+      PROXY_SERVER_URL: "http://172.17.0.1:${FLASK_STARTER_POSTGREST_PORT}"
+      FLASK_CONFIG: ${FLASK_CONFIG}
+      SQLALCHEMY_DATABASE_URI: "postgresql://postgres:${POSTGRES_PASSWORD}@172.17.0.1:${DB_PORT}/dataknown"
+    depends_on:
+      - flask_starer_redis
+      - postgres_flask_starer
+    network_mode: bridge

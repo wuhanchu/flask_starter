@@ -12,6 +12,7 @@
     - [开发前的配置要求](#开发前的配置要求)
   - [文件目录说明](#文件目录说明)
   - [开发的架构](#开发的架构)
+  - [编译](#编译)
   - [部署/运行](#部署运行)
   - [使用到的框架](#使用到的框架)
   - [版权说明](#版权说明)
@@ -47,11 +48,19 @@ filetree
 
 todo 暂无
 
+## 编译
+
+```shell
+docker build -f ./docker/Dockerfile -t wuhanchu/flask_flask_starer:master .
+```
+
 ## 部署/运行
 
+```shell
+docker compose -f ./docker/docker-compose.yml -e ../run_config/env/flask_starter/test.env up -d
 ```
-python run.py
-```
+
+需要自定义环境变量文件
 
 ## 使用到的框架
 
