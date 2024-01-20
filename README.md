@@ -1,12 +1,12 @@
 # FLASK_STARTER(后端开发脚手架)
-[项目地址](https://github.com/wuhanchu/flask_starter)
-基于flask的框架，并整合一些常用框架。
-基于一定的标准，快速创建web服务
 
- 
+[项目地址](https://github.com/wuhanchu/flask_starter)
+基于 flask 的框架，并整合一些常用框架。
+基于一定的标准，快速创建 web 服务
+
 ## 目录
 
-- [FLASK_STARTER(后端开发脚手架)](#flask_starter后端开发脚手架)
+- [FLASK\_STARTER(后端开发脚手架)](#flask_starter后端开发脚手架)
   - [目录](#目录)
   - [上手指南](#上手指南)
     - [开发前的配置要求](#开发前的配置要求)
@@ -18,7 +18,7 @@
 
 ## 上手指南
 
-todo 
+todo
 
 ### 开发前的配置要求
 
@@ -27,7 +27,7 @@ todo
 ## 文件目录说明
 
 ```
-filetree 
+filetree
 ├── README.md -- 项目说明
 ├── /extension/ -- 通用组件
 └── /util/ -- 通用工具
@@ -43,11 +43,12 @@ filetree
 
 ```
 
-## 开发的架构 
+## 开发的架构
 
 todo 暂无
 
 ## 部署/运行
+
 ```
 python run.py
 ```
@@ -58,7 +59,4 @@ todo 暂无
 
 ## 版权说明
 
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
-
-
-
+该项目签署了 MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
