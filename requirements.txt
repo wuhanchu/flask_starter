@@ -1,5 +1,5 @@
-flask_frame==0.6.8
-redis~=4.0.2
+flask_frame==0.7.1
+redis~=4.4.0
 
 
 itsdangerous~=2.0.1

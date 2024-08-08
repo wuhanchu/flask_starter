@@ -18,7 +18,7 @@ services:
     ports:
       - ${FLASK_STARTER_POSTGREST_PORT}:3000
     environment:
-      PGRST_DB_URI: "postgres://postgres:${POSTGRES_PASSWORD}@172.17.0.1:${DB_PORT}/dataknown"
+      PGRST_DB_URI: "postgres://postgres:${POSTGRES_PASSWORD}@${SERVER_IP}:${DB_PORT}/dataknown"
       PGRST_DB_SCHEMA: "flask_starer"
       PGRST_DB_ANON_ROLE: "postgres"
     network_mode: bridge
@@ -27,14 +27,14 @@ services:
   flask_starer:
     container_name: flask_starer
     restart: always
-    image: wuhanchu/flask_flask_starer:${FLASK_STARTER_SERVER_VERSION}
+    image: wuhanchu/flask_flask_starer:${FLASK_STARTER_SERVICE_VERSION}
     ports:
-      - ${FLASK_STARTER_SERVER_PORT}:5000
+      - ${FLASK_STARTER_SERVICE_PORT}:5000
     environment:
-      REDIS_URL: "redis://:${REDIS_PASSWORD}@172.17.0.1:${FLASK_STARTER_REDIS_PORT}"
-      PROXY_SERVER_URL: "http://172.17.0.1:${FLASK_STARTER_POSTGREST_PORT}"
+      REDIS_URL: "redis://:${REDIS_PASSWORD}@${SERVER_IP}:${FLASK_STARTER_REDIS_PORT}"
+      PROXY_SERVICE_URL: "http://${SERVER_IP}:${FLASK_STARTER_POSTGREST_PORT}"
       FLASK_CONFIG: ${FLASK_CONFIG}
-      SQLALCHEMY_DATABASE_URI: "postgresql://postgres:${POSTGRES_PASSWORD}@172.17.0.1:${DB_PORT}/dataknown"
+      SQLALCHEMY_DATABASE_URI: "postgresql://postgres:${POSTGRES_PASSWORD}@${SERVER_IP}:${DB_PORT}/dataknown"
     depends_on:
       - flask_starer_redis
       - postgres_flask_starer
