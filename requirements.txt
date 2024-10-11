@@ -1,10 +1,1 @@
-flask_frame==0.7.3
-redis~=4.4.0
-
-
-itsdangerous~=2.0.1
-Authlib~=0.14.1
-
-celery~=5.2.1
-celery_once~=3.0.1
-celery-redbeat~=2.0.0
+flask_frame==0.7.9
