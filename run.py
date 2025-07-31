@@ -14,20 +14,21 @@ import context
 if context.app:
     app = context.app
 else:
+    #  gevent 修改标准库为协程
+    from gevent import monkey
+
+    monkey.patch_all()
+
     import module
 
     # 创建并初始化应用
     app = create_app(config)
-    module.init_app(app)     # 初始化模块
-    context.init_app(app)    # 设置应用上下文
-    
+    module.init_app(app)  # 初始化模块
+    context.init_app(app)  # 设置应用上下文
+
     # 打印URL映射表，便于调试
     print(app.url_map)
 
     # 作为主程序运行时启动服务器
     if __name__ == "__main__":
-        app.run(
-            host="0.0.0.0", 
-            port=app.config.get("RUN_PORT"), 
-            threaded=False
-        )
+        app.run(host="0.0.0.0", port=app.config.get("RUN_PORT"), threaded=False)
