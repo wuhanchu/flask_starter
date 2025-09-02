@@ -5,6 +5,13 @@
 
 用于创建和运行Flask应用程序实例。
 """
+
+import sys
+if "gevent" in sys.modules:
+    from gevent import monkey
+    monkey.patch_all()
+
+
 from flask_frame.app import create_app
 from config import config
 import context
@@ -14,11 +21,6 @@ import context
 if context.app:
     app = context.app
 else:
-    #  gevent 修改标准库为协程
-    from gevent import monkey
-
-    monkey.patch_all()
-
     import module
 
     # 创建并初始化应用
