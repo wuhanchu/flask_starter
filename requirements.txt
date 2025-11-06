@@ -1,1 +1,1 @@
-flask_frame==1.0.15
+flask_frame==1.1.23
