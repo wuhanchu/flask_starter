@@ -22,15 +22,17 @@ class Config:
 
     # 数据库配置
     # DB_SCHEMA = "flask_starter"
-    SQLALCHEMY_ECHO = True                      # SQL语句输出到控制台
-    SQLALCHEMY_RECORD_QUERIES = True            # 记录查询统计信息
-    SQLALCHEMY_TRACK_MODIFICATIONS = True       # 追踪对象修改并发送信号
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")  # 数据库连接URI
 
 
 class DevelopmentConfig(Config):
     """开发环境配置"""
     DEBUG = True
+    
+    # 数据库配置
+    SQLALCHEMY_ECHO = True                      # SQL语句输出到控制台
+    SQLALCHEMY_RECORD_QUERIES = True            # 记录查询统计信息
+    SQLALCHEMY_TRACK_MODIFICATIONS = True       # 追踪对象修改并发送信号
 
 
 class TestingConfig(Config):

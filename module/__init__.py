@@ -8,11 +8,6 @@
 你可以通过修改 ``ENABLED_MODULES`` 配置变量来控制启用的模块。
 """
 from concurrent.futures.thread import ThreadPoolExecutor
-
-# 创建线程池执行器，最大线程数为4
-executor = ThreadPoolExecutor(max_workers=4)
-
-
 def init_app(app, **kwargs):
     """
     初始化应用程序的模块
